@@ -1,7 +1,8 @@
 FROM pypy:2
 
 WORKDIR /usr/src/app
-RUN pip wheel --no-cache-dir -w wheelhouse rproxy
+#RUN pip wheel --no-cache-dir -w wheelhouse rproxy
+RUN pip wheel --no-cache-dir -w wheelhouse git+https://github.com/cdunklau/rproxy.git@dont-truncate-certs
 
 FROM pypy:2-slim
 
